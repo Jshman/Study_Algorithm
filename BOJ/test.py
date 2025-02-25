@@ -1,10 +1,7 @@
-String = "123456543211"
-
-def palindrome(String):
-    for s in range(len(String)//2):
-        print(s)
-        if String[s] != String[-1-s]:
-            return False
-    return True
-
-print(palindrome(String))
+import random
+nums = []
+for i in range(32):
+    nums.append(random.randint(1, 100))
+nums = list(set(nums))
+nums.sort()
+print(nums)
