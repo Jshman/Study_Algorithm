@@ -1,1 +1,1 @@
-print(len([]))
+print(0^4^7)
