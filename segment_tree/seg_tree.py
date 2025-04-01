@@ -56,18 +56,23 @@ def modify(start, end, idx, where, value):
     
     # 수정
     tree[idx] -= value
-    
+    # print(f"here-> {idx} {tree[idx]} {start} {end}")
     # 리프노드 까지 왔으면 종료
     if (start == end):
         return
     
     mid = (start+end) //2
     modify(start, mid, idx*2, where, value)
-    modify(start, mid, idx*2+1, where, value)    
+    modify(mid+1, end, idx*2+1, where, value)    
     
-arr[6] += 3
-modify(0, 9, 1, 6, 10)
+# arr[6] == 7
+# 나는 100로 수정할 거임.
+idx = 6
+value = arr[idx] - 100  #=-93
+print("수정할 값: ",value)
+modify(0, len(arr)-1, 1, idx, value)
 
+print(f"modify 이후 트리:",tree)
 
-print(f"4 ~ 7까지 부분합:", interval(0, len(arr)-1, 1, 4, 7))
+print(f"modify를 하고나서 4 ~ 7까지 부분합:", interval(0, len(arr)-1, 1, 4, 7))
 
