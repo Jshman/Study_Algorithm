@@ -1,4 +1,4 @@
-# 못 풀었음음
+# 못 풀었음
 
 import math
 from collections import deque
