@@ -21,14 +21,13 @@ if "__main__" == __name__:
 
     for i in range(n):
         info = list(map(int, input().split()))
-        for j in info:
+        for j in range(n):
             if info[j] == 0: continue
             union(i, j)
-    print(parent)
+    # print(parent)
 
     trip = list(map(int, input().split()))
     for i in range(1, m):
-        if i >= n : continue
         if find_set(trip[i-1]-1) != find_set(trip[i]-1):
             print("NO")
             break
